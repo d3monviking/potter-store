@@ -63,16 +63,16 @@ def Movies(request):
 def Shop(request):
     q = request.GET.get('q') if request.GET.get('q') != None else  ''
     products = Product.objects.filter(name__icontains=q)
-    items = Cart.objects.filter(customer = request.user)
-    price = sum(item.product.price * item.quantity for item in items)
-    context = {'products': products, 'items': items, 'price': price}
+    if request.user.is_authenticated:
+        items = Cart.objects.filter(customer = request.user)
+        price = sum(item.product.price * item.quantity for item in items)
+        context = {'products': products, 'items': items, 'price': price}
+    else:
+        context = {'products': products}
     return render(request, 'base/shop.html', context)
 
 def myCart(request): 
-    items = Cart.objects.filter(customer = request.user)
-    price = sum(item.product.price * item.quantity for item in items)
-    context = {'items': items, 'price': price}
-    return render(request, 'base/cart.html', context)
+    return render(request, 'base/cart.html')
 
 @login_required(login_url = "login")
 def addItem(request, pk):
