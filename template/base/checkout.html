@@ -1,0 +1,187 @@
+<div id="id01" class="modal">
+    <div class="wrapper">
+      <div class="bill-content">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
+      <h1 class="box-title">Checkout</h1>
+      <div class="price-total">
+        <span>PAY</span>
+        <div class="pay-last">${{price}}</div>
+      </div>
+      <form action="{% url 'remove' %}">
+        <div class="form-text">
+          <label>Card Number</label>
+          <input 
+            name="card-number" type="number" required placeholder="xxxx xxxx xxxx xxxx" maxlength="16" min="16"
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            > 
+        </div>
+        <div class="form-text">
+          <label>Card Verification Value</label>
+          <input name="cvv" type="number" placeholder="cvv" maxlength="3" min="3" required 
+          oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+          >
+        </div>
+  
+        <div class="form-text" id="col01">
+          <label>Expiry Date</label>
+          <input name="expNumber" type="month"  placeholder="mm/yy" required >
+        </div>
+        <div class="form-text"  id="col02">
+          <label>Name on Card*</label>
+          <input name="name" placeholder="E.g: MR/MRS Hermoine" type="text">
+        </div>
+        
+       <button id="end">PAY NOW</button>
+      </form>
+      </div>
+    </div>
+   </div>
+  
+  <style>
+    /* -------------BILL------------------- */
+.modal{
+  display:none;
+  position:fixed;
+  z-index: 99;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  background-color: rgba(0, 0, 0, 0.4);
+  
+}
+.wrapper{
+  background-color: rgb(101, 175, 124);
+  width:50%;
+  box-shadow: 10px 10px 0 rgb(249, 249, 249); 
+  border-bottom: 1px solid white;
+  margin: 1% auto 2% auto;
+  animation: animatezoom .6s;
+  -webkit-animation: animatezoom .6s;
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@-moz-keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+@-o-keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+.wrapper:before {
+  /* background: linear-gradient(-135deg, #000 10px, transparent 0), linear-gradient(135deg, #000 10px, transparent 0), linear-gradient(-134deg, yellow 13px, transparent 0), linear-gradient(134deg, yellow 13px, transparent 0); */
+  /* background-repeat: repeat; */
+  background-size: 21px 32px;
+  content: "";
+  display: block;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 25px;
+}
+
+.wrapper:after {
+  /* background: linear-gradient(-45deg, #000 10px, transparent 0), linear-gradient(45deg, #000 10px, transparent 0), linear-gradient(-45deg, yellow 13px, transparent 0), linear-gradient(45deg, yellow 13px, transparent 0); */
+  /* background-repeat: repeat; */
+  background-size: 21px 32px;
+  content: "";
+  display: block;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100px;
+}
+
+.bill-content{
+  width:95%;
+  margin: auto;
+}
+
+.wrapper h1{
+  text-transform: uppercase;
+  align-content: center;
+}
+.box-title{
+  text-shadow: 2px 2px 0 rgb(10, 101, 46);
+}
+.price-total{
+  background:black;
+  font-size: 1.5em;
+  text-align:center;
+  color: rgb(5, 163, 18);
+  font-weight: 800;
+  padding:5px 0;
+  margin: 15px 0;
+}
+.price-total span{
+  font-size: .75em;
+  color:white;
+}
+.form-text{
+  padding: 5px;
+  display: block;
+}
+form{
+  margin: 0 -5px;
+}
+label{
+  display: block;
+  font-size: .9em;
+  text-transform: uppercase;
+  font-weight:bold;
+  margin-bottom: 5px;
+}
+input{
+  border: 3px solid black;
+  width:95%;
+  padding: 7px;
+  font-size: 1.1em;
+}
+input:focus{       /* click on */
+  outline: 0;
+  background: rgb(231, 235, 231);
+}
+.wrapper button{
+  font-size: 1.2em;
+  padding: 10px;
+  border: 0;
+  line-height: 1.6;
+  box-shadow: 3px 3px 0 rgb(0, 246, 70);
+  cursor: pointer;
+  background: rgb(5, 86, 9);
+  transition: ease-in all .3s;
+  font-weight: bold;
+  color: #ffffff;
+
+}
+.wrapper button:hover, .wrapper button:focus{
+  background:black;
+  color:rgb(25, 222, 54);
+  box-shadow: 5px 5px 0 rgb(101, 163, 114);
+  outline: none;
+}
+/* #coupon{
+  border: 3px solid black;
+  background:white;
+  color: black;
+  box-shadow: none;
+  border-radius: 4px;
+  animation: shrink  1s infinite;
+} */
+/* #coupon:hover{
+  animation: none;
+  background: black;
+  color: yellow;
+  border: 3px solid yellow;
+} */
+#end{
+  float:right;
+  margin-right:10px;
+}
+  </style>

@@ -87,3 +87,11 @@ def deleteItem(request, pk):
     item = Cart.objects.get(id = pk)
     item.delete()
     return redirect('shop')
+
+def checkout(request):
+    return render(request, 'base/checkout.html')
+
+def remove(request):
+    items = Cart.objects.filter(customer = request.user)
+    items.delete()
+    return redirect('shop')
