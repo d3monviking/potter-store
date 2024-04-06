@@ -1,0 +1,258 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+    <section class="parallax">
+        <h2 id="text">Harry Potter</h2>
+        <img src="../../static/images/tree-left.png"  id="tree-left">
+        <img src="../../static/images/tree-right.png"  id="tree-right"> 
+        <img src="../../static/images/gate-left.png"  id="gate-left"> 
+        <img src="../../static/images/gate-right.png"  id="gate-right"> 
+        <img src="../../static/images/grass.png"  id="grass"> 
+    </section>
+    <header style="margin-top: -50px; background: black;">
+        <h1>Harry Potter Characters</h1>
+    </header>
+
+    <main style="margin-bottom: 0px;">
+        <div class="hero active">
+        <h1>Harry Potter</h1>
+        </div>
+        <div class="hero">
+        <h1>Hermione Granger</h1>
+        </div>
+        <div class="hero">
+        <h1>Ron Weasley</h1>
+        </div>
+        <div class="hero">
+        <h1>Severus Snape</h1>
+        </div>
+        <div class="hero">
+        <h1>Rubeus Hagrid</h1>
+        </div>
+        <div class="hero">
+        <h1>Bellatrix Lestrange</h1>
+        </div>
+        <div class="hero">
+        <h1>Sirius Black</h1>
+        </div>
+        <div class="hero">
+        <h1>Albus Dumbledore</h1>
+        </div>
+        <div class="hero">
+        <h1>Draco Malfoy</h1>
+        </div>
+        <div class="hero">
+        <h1>Dobby</h1>
+        </div>
+        <div class="hero">
+        <h1>Neville Longbottom</h1>
+        </div>
+        <div class="hero">
+        <h1>Lord Voldemort</h1>
+        </div>
+    </main>
+
+    <style>
+    .parallax
+    {
+        position: relative;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        height: 120vh !important;
+        background: url('../../static/images/moon.png') no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        z-index:10px;
+        overflow: hidden;
+    }
+    #text
+    {
+        position:absolute;
+        font-size: 5em;
+        color: #1b283a;
+        text-shadow: 2px 4px 5px #f9f9f9;
+        padding-left: 15px;
+        top: 20%;
+        transform: translateY(-20%);
+    }
+    .parallax img
+    {
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        pointer-events:none;
+    }
+    .parallax img#gate-left
+    {
+        position: fixed;
+        transform: translateX(-282px);
+    }
+    .parallax img#gate-right
+    {
+        position: fixed;
+        transform: translateX(305px);
+    }
+    body
+    {
+        position:relative;
+        background: #020912;
+        background: url('../../static/images/moon.png') no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        overflow-x:hidden !important;
+/*         overflow-y: hidden; */
+    }
+    header h1
+    {
+        font-size: 3em;
+        color:#fff;
+        margin-bottom: 10px;
+    }
+    main {
+        display: flex;
+        width: 100%;
+/*         margin: 20px; */
+        background: black;
+      }
+      
+      .hero {
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 75vh;
+        border-radius: 50px;
+        color: #fff;
+        cursor: pointer;
+        flex: 0.5;
+        margin: 10px;
+        transition: flex 0.5s linear;
+      }
+      
+      .hero:nth-child(1) {
+        background-image: url(https://c4.wallpaperflare.com/wallpaper/339/533/291/daniel-radcliffe-harry-potter-wallpaper-preview.jpg);
+      }
+      
+      .hero:nth-child(2) {
+        background-image: url(https://wallpaperset.com/w/full/e/5/2/522279.jpg);
+      }
+      
+      .hero:nth-child(3) {
+        background-image: url(https://i.pinimg.com/564x/e3/42/9a/e3429a8c2719dd70ddf5b0add1c6a559.jpg);
+      }
+      
+      .hero:nth-child(4) {
+        background-image: url(https://i.pinimg.com/736x/4f/5a/cb/4f5acb6697e8e04d2c38b94f0b4fc595.jpg);
+      }
+      
+      .hero:nth-child(5) {
+        background-image: url(https://pbs.twimg.com/media/Ba0WbvCCYAAoJOd.jpg:large);
+      }
+      
+      .hero:nth-child(6) {
+        background-image: url(https://images.ctfassets.net/usf1vwtuqyxm/3HZ6VGtPLGuCgkUkikMm00/88e260e0706a9052515772dabfc3f07c/BellatrixLestrange_WB_F6_BellatrixLestrangeFullbody_Promo_080615_Port.jpg?fm=jpg&q=70&w=2560);
+      }
+      
+      .hero:nth-child(7) {
+        background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/43648c94-bec7-4222-9957-afe9c1b63daa/dg3ae9q-38472a72-3924-45b3-961d-036ed73dc9b5.png/v1/fill/w_894,h_894,q_70,strp/sirius_black_harry_potter_by_braydenjaselle_dg3ae9q-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAyNCIsInBhdGgiOiJcL2ZcLzQzNjQ4Yzk0LWJlYzctNDIyMi05OTU3LWFmZTljMWI2M2RhYVwvZGczYWU5cS0zODQ3MmE3Mi0zOTI0LTQ1YjMtOTYxZC0wMzZlZDczZGM5YjUucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.PxLMxw2DT0UKeXWFbnCujlJqFP0aAvjADiTWT-KWZAc);
+      }
+      
+      .hero:nth-child(8) {
+        background-image: url("../../static/images/Albus\ Dumbledore.jpg");
+      }
+      
+      .hero:nth-child(9) {
+        background-image: url(https://user-images.githubusercontent.com/13468728/235145234-61a54f5c-cc35-49f8-b8df-0e3bc60b8d22.png);
+      }
+      
+      .hero:nth-child(10) {
+        background-image: url(https://i.pinimg.com/originals/12/51/78/12517862249e65d885d18d9aa039479f.jpg);
+      }
+      
+      .hero:nth-child(11) {
+        background-image: url(https://media.harrypotterfanzone.com/neville-longbottom-half-blood-prince-portrait.jpg);
+      }
+      
+      .hero:nth-child(12) {
+        background-image: url(https://media.harrypotterfanzone.com/lord-voldemort-deathly-hallows-part-2-portrait-2.jpg);
+      }
+      
+      .hero h1 {
+        position: absolute;
+        font-size: 1.5rem;
+        bottom: 20px;
+        left: 20px;
+        opacity: 0;
+      }
+      
+      .hero.active {
+        flex: 5;
+      }
+      
+      .hero.active h1 {
+        opacity: 1;
+        transition: opacity 0.3s ease-in 0.4s;
+      }
+      
+      @media (max-width: 1000px) {
+        .hero:nth-of-type(7),
+        .hero:nth-of-type(8),
+        .hero:nth-of-type(9),
+        .hero:nth-of-type(10),
+        .hero:nth-of-type(11) {
+          display: none;
+        }
+      }
+      
+      @media (max-width: 650px) {
+        .hero:nth-of-type(4),
+        .hero:nth-of-type(5),
+        .hero:nth-of-type(6),
+        .hero:nth-of-type(7),
+        .hero:nth-of-type(8),
+        .hero:nth-of-type(9),
+        .hero:nth-of-type(10),
+        .hero:nth-of-type(11),
+        .hero:nth-of-type(12) {
+          display: none;
+        }
+      }
+
+</style>
+<script>
+let text = document.getElementById('text');
+let treeLeft = document.getElementById('tree-left');
+let treeRight = document.getElementById('tree-right');
+let gateLeft = document.getElementById('gate-left');
+let gateRight = document.getElementById('gate-right');
+window.addEventListener('scroll',()=>{
+    let value = window.scrollY;
+    text.style.marginTop = value * 2.5 +'px';
+    treeLeft.style.marginLeft = value * -1.5 + 'px';
+    treeRight.style.marginLeft = value * 1.5 + 'px';
+    gateLeft.style.left = value * 0.5 +'px';
+    gateRight.style.left = value * -0.5 +'px';
+});
+const heroes = document.querySelectorAll(".hero");
+
+heroes.forEach((hero) => {
+  hero.addEventListener("click", () => {
+    removeActiveClasses();
+    hero.classList.add("active");
+  });
+});
+
+function removeActiveClasses() {
+  heroes.forEach((hero) => {
+    hero.classList.remove("active");
+  });
+}
+
+</script>
+{% endblock content %}

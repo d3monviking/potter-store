@@ -1,0 +1,92 @@
+@font-face {font-family: "Harry Potter";
+  src: url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.eot");
+  src: url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.eot?#iefix") format("embedded-opentype"),
+  url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.woff2") format("woff2"),
+  url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.woff") format("woff"),
+  url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.ttf") format("truetype"),
+  url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.svg#Harry Potter") format("svg");
+}
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Harry Potter;
+}
+
+/* nav head starts */
+a:hover {
+  background-color: rgb(56, 64, 61);}
+  
+  
+header {
+  position: relative;
+  margin-top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.6s;
+  padding: 10px 22px;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+header.sticky {
+  padding: 5px 100px;
+  background:white;
+}
+
+header .logo {
+  position: relative;
+  color: #4377aa;
+  text-decoration: none;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.6s;
+  border-radius: 50%;
+  img {
+    border-radius: 50%;
+    
+  }
+}
+
+header ul {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul li {
+  position: relative;
+  list-style: none;
+}
+
+header ul li a {
+  position: relative;
+  margin: 0 1px;
+  text-decoration: none;
+  color:white;
+  letter-spacing: 2px;
+  font-weight: 500;
+  transition: 0.6s;
+  font-size: 20px;
+  padding-right: 63px;
+}
+
+header.sticky .logo,
+header.sticky li a {
+  color:white;
+}
+
+
+/* nav head ends */
+
+
+body{
+  min-height: 100vh;
+  background: url('../images/finalbg.png') no-repeat;
+  background-size: cover;
+  background-position: center;
+}

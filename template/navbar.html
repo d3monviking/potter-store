@@ -1,0 +1,93 @@
+{% load static %}
+
+
+<header>
+    <a href="{% url 'home' %}"><img class="logo" src="{% static 'images/logo.png' %}" width="200" height="60" ></a>
+    <form class="header__search" method="GET" action="{% url 'shop' %}">
+      <label>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+          <title>search</title>
+          <path
+            d="M32 30.586l-10.845-10.845c1.771-2.092 2.845-4.791 2.845-7.741 0-6.617-5.383-12-12-12s-12 5.383-12 12c0 6.617 5.383 12 12 12 2.949 0 5.649-1.074 7.741-2.845l10.845 10.845 1.414-1.414zM12 22c-5.514 0-10-4.486-10-10s4.486-10 10-10c5.514 0 10 4.486 10 10s-4.486 10-10 10z"
+          ></path>
+        </svg>
+        <input name = 'q' placeholder="Search for products..." style="color: rgb(14, 14, 16);"/>
+      </label>
+    </form>
+
+    <ul>
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'shop' %}">Shop</a></li>
+      <li><a href="{% url 'movies' %}">Movies</a></li>
+      {% if request.user.is_authenticated %}
+      <li><a href="{% url 'logout' %}">Logout</a></li>
+      {% else %}
+      <li><a href="{% url 'login' %}" class="btnLogin-popup" >Login</a></li>
+      {% endif %}
+      
+    </ul>
+</header>
+
+<style>
+@font-face {font-family: "Harry Potter";
+  src: url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.eot");
+  src: url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.eot?#iefix") format("embedded-opentype"),
+  url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.woff2") format("woff2"),
+  url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.woff") format("woff"),
+  url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.ttf") format("truetype"),
+  url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.svg#Harry Potter") format("svg");
+}
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Harry Potter;
+}
+
+.header__search > label {
+  background-color: var(--color-dark-medium);
+  padding: 1.3rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 4px;
+}
+
+.header__search svg {
+  fill: var(--color-gray);
+  width: 2rem;
+  height: 2rem;
+  margin-left: 1rem;
+}
+
+.header__search input {
+  width: 500px;
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  outline: none;
+  color: var(--color-light);
+}
+
+input{
+  font-size: 14px;
+  border-radius: 6px;
+  line-height: 1.5;
+  padding: 5px 10px;
+  margin-top: 8px;
+  transition: box-shadow 100ms ease-in, border 100ms ease-in, background-color 100ms ease-in;
+  border: 2px solid #dee1e2;
+  color: rgb(14, 14, 16);
+  background: #dee1e2;
+  display: block;
+  height: 30px;
+}
+input:hover {
+  border-color: #ccc;
+}
+input :focus{
+  border-color: #9147ff;
+  background: #fff;
+}
+
+</style>
+

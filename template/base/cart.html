@@ -1,0 +1,27 @@
+{% load static %}
+<div class="container">
+    <div class="table">
+    {% if items.count == 0 %}   
+    <div style="margin-top: 100px; font-size: 1.5em;">Your cart is empty!</div>
+<!--     <img src="https://2.bp.blogspot.com/-VYC7hvhUz4U/WdcPLAr86jI/AAAAAAAABuA/G3y27JwIL_0S5OsVIp6maXjsdgLRumaTwCLcBGAs/s1600/emptycart.png" style="width:200px;"/> -->
+    {% else %}
+    <h3>Shopping Cart</h3>
+    <br>
+    {% for item in items %}
+        <div class="col1-name">{{item.product.name}} x {{item.quantity}}</div>
+        <div class="col2-price">${{item.product.price}}</div>
+        {% if page != 'checkout' %}
+        <div class="del"><a href="{% url 'deleteItem' item.id%}"><img src="{% static 'images/remove.png' %}"></a></div>
+        {% endif %}
+    {% endfor %}
+    {% endif %}
+    </div>
+    <div class="cart-bottom">
+        <div class="total" style="margin-top: 20px;">
+            <div class="total-text">Total Amount:</div>
+            <div class="total-amount">${{price}}</div>
+        </div>
+        <div class="checkout">Check out</div>
+    </div>
+</div>
+  

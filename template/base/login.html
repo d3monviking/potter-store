@@ -1,0 +1,76 @@
+{% extends 'main.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<main>
+  {% if page == 'login' %}
+  <div>
+    <div>
+      <div>
+          <h3>Login</h3>
+      </div>
+      <div>
+        <form action="" method="POST">
+          {% csrf_token %}
+          <div>
+            <label for="room_name">Username</label>
+            <input id="username" name="username" type="text" placeholder="username" />
+          </div>
+          <div>
+            <label for="password">Password</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
+            />
+          </div>
+
+          <button type="submit">
+            Login
+          </button>
+        </form>
+
+        <div>
+          <p>Haven't signed up yet?</p>
+          <a href="{% url 'register' %}">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {%else%}
+  <div>
+    <div>
+      <div>
+          <h3>Register</h3>
+        </div>
+      </div>
+      <div>
+        <form action="" method="POST">
+          {% csrf_token %}
+          {% for field in form%}
+          <div>
+            <label for="room_name">{{field.label}}</label>
+            {{field}}
+          </div>
+          {% endfor %}
+          <button type="submit">
+            Register
+          </button>
+        </form>
+
+        <div>
+          <p>Already Signed Up?</p>
+          <a href="{% url 'login' %}">Login</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</main>
+
+{% endblock content %}
+
+

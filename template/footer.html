@@ -1,0 +1,203 @@
+{% load static %}
+
+<footer class="footer">
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+    </div>
+    <div class="row">
+        <div class="col">
+           <ul>
+            <li> <div class="logo"><a href="#">WEB WIZARDS</a></div></li>
+            <li><p>© Web Wizards DIGITAL 2024
+
+              Looking for Pottermore? Web Wizards is the new official home of Harry Potter & Fantastic Beasts.
+              
+             Delivering the latest news and official products from the Web Wizards and our partners.
+              
+              </p></li>
+           </ul>
+
+        </div>
+        <div class="col">
+            <ul>
+                <li>+1 23 (555) 5858</li>
+                <li>WebWizards@gmail.com</li>
+                <li>Bangalore, IND</li>
+            </ul>
+        </div>
+        <div class="col">
+            <ul>
+                <li>About Us</li>
+                <li>Blog</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <div class="col">
+            <ul class="social">
+                <li>
+                    <i class="fa-brands fa-facebook-f"><a href="https://www.facebook.com/wizardingworld">I</a></i>
+                </li>
+                <li>
+                    <i class="fa-brands fa-instagram"><a href="https://www.instagram.com/harrypotter/">I</a> </i>
+                </li>
+                <li>
+                    <i class="fa fa-youtube-play"><a href="https://www.youtube.com/channel/UChPRO1CB_Hvd0TvKRU62iSQ">I</a></i>
+                </li>
+                <li>
+                    <i class="fa-brands fa-x-twitter" ><a href="https://twitter.com/wizardingworld">I</a></i>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+    <p>&copy; 2023|| All Rights Reserved by webWiz_IIITB_TM & © WBEI. Web Wizards Publishing and Theatrical Stage Rights © J.K. Rowling.</p>
+  </footer>
+<style>
+   .footer {
+    position: relative;
+    width: 100%;
+    background: #000000;
+    min-height: 100px;
+      padding: 3% 5%;
+      text-align: center;
+      color: #fff;
+  }
+  
+  .logo a{
+      font-size: 30px;
+      color: #fff;
+      font-weight: 600;
+      margin: 20px 0;
+  }
+  
+  .wave {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: url("svg\ \(2\).png");
+    background-size: 1000px 100px;
+  }
+  
+  .wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWaves 4s linear infinite;
+  }
+  
+  .wave#wave2 {
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animate 4s linear infinite !important;
+  }
+  
+  .wave#wave3 {
+    z-index: 1000;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animateWaves 3s linear infinite;
+  }
+  
+  .wave#wave4 {
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animate 3s linear infinite;
+  }
+  .row{
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      text-align: start;
+      margin-bottom: 20px;
+  }
+  .row .col {
+      width: 50%;
+  }
+  .row .col ul{
+      width: 80%;
+  }
+  .social{
+      display: flex;
+      gap: 20px;
+  }
+  .social li{
+      height: 40px;
+      width: 40px;
+      border: 1px solid #fff;
+      border-radius: 50%;
+      position: relative;
+      transition: .6s;
+  }
+  
+  .social li i{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+  }
+  .social li:hover{
+      background-color: #fff;
+      transform: translateY(-5px);
+  }
+  .social li:hover i{
+      color: #FF6900;
+  }
+  @keyframes animateWaves {
+    0% {
+      background-position-x: 1000px;
+    }
+    100% {
+      background-positon-x: 0px;
+    }
+  }
+  
+  @keyframes animate {
+    0% {
+      background-position-x: -1000px;
+    }
+    100% {
+      background-positon-x: 0px;
+    }
+  }
+  
+</style>
+
+<script>
+let text = document.getElementById('text');
+let treeLeft = document.getElementById('tree-left');
+let treeRight = document.getElementById('tree-right');
+let gateLeft = document.getElementById('gate-left');
+let gateRight = document.getElementById('gate-right');
+window.addEventListener('scroll',()=>{
+    let value = window.scrollY;
+    text.style.marginTop = value * 2.5 +'px';
+    treeLeft.style.marginLeft = value * -1.5 + 'px';
+    treeRight.style.marginLeft = value * 1.5 + 'px';
+    gateLeft.style.left = value * 0.5 +'px';
+    gateRight.style.left = value * -0.5 +'px';
+});
+const heroes = document.querySelectorAll(".hero");
+
+heroes.forEach((hero) => {
+  hero.addEventListener("click", () => {
+    removeActiveClasses();
+    hero.classList.add("active");
+  });
+});
+
+function removeActiveClasses() {
+  heroes.forEach((hero) => {
+    hero.classList.remove("active");
+  });
+}
+
+</script>

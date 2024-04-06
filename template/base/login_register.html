@@ -1,0 +1,200 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="wrapper">
+  {% if page == 'login' %}
+  <div class="form-box login">
+    <h2 style="color:rgba(183,231,190,255)">Login</h2>
+    <form action="" method="POST">
+      {% csrf_token %}
+      <div class="input-box">
+        <label for="room_name">Username:    </label>
+        <input id="username" name="username" type="text" placeholder="Enter your username" />
+      </div>
+      <div class="input-box">
+        <label for="password">Password:   </label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"/>
+      </div>
+      <button type="submit" class="btn" style = "width: 90%">Login</button>
+      <div class="login-register">
+        <p>Don't have an  account? <a href="{% url 'register' %}" class="register-link"  style="color:black">Register</a></p>
+      </div>
+    </form>
+  </div>
+  {%else%}
+  <div class="form-box register">
+    <h2 style="color:rgba(183,231,190,255)">Registration</h2>
+    <form action="" method="POST">
+      {% csrf_token %}
+      {% for field in form%}
+      <div class="input-box">
+        <div>
+          <label for="room_name">{{field.label}}:   </label>
+          {{field}}
+        </div>
+      </div>
+      {% endfor %}
+      <button type="submit" class="btn">Register</button>
+      <div class="login-register">
+        <p>Already have an  account? <a href="{% url 'login' %}" class="login-link"  style="color:black">Login</a></p>
+      </div>
+    </form>
+  </div>
+  {% endif %}
+</div>
+<style>
+@font-face {font-family: "Harry Potter";
+    src: url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.eot");
+    src: url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.eot?#iefix") format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.woff2") format("woff2"),
+    url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.woff") format("woff"),
+    url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.ttf") format("truetype"),
+    url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.svg#Harry Potter") format("svg");
+}
+
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Harry Potter, sans-serif;
+  color: rgba(183,231,190,255);
+}
+.wrapper{   
+  margin-left: 150px;
+  margin-top: 50px;
+  position:relative;
+  width:400px;
+  height:500px;
+  background: transparent;
+  border:2px solid rgba(255,255,255,.5);
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px,rgb(0,0,0,.5);
+  display: flex;
+  overflow:hidden;
+  padding-left: 10px;
+}
+.wrapper.form-box
+{
+  width:100%;
+  padding: 40px;
+}
+
+.wrapper.form-box.register
+{
+  position:absolute;
+}
+
+.form-box h2
+{
+  font-size: 2em;
+  color:#162938;
+  text-align:center;
+}
+
+input{
+  font-size: 14px;
+  border-radius: 6px;
+  line-height: 1.5;
+  padding: 5px 10px;
+  margin-top: 8px;
+  transition: box-shadow 100ms ease-in, border 100ms ease-in, background-color 100ms ease-in;
+  border: 2px solid #dee1e2;
+  color: rgb(14, 14, 16);
+  background: #dee1e2;
+  display: block;
+  height: 30px;
+}
+input:hover {
+  border-color: #ccc;
+}
+input :focus{
+  border-color: #9147ff;
+  background: #fff;
+}
+
+.input-box
+{
+  position:relative;
+  width:100%;
+  height: 45px;
+  margin:30px 0;
+}
+
+label{
+  font-size: 1.1em;
+}
+
+.input-box.label
+{
+  position:absolute;
+  top:50%;
+  left:5px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color:#162938;
+  font-weight:500;
+  pointer-events: none;
+  transition: .5s;
+  margin-bottom: 20px;
+}
+.input-box.input:focus~label,
+.input-box.input:valid~label
+{
+  top:-5px;
+}
+.input-box.input{
+  width:100%;
+  height:100%;
+  background: transparent;
+  border:none;
+  outline:none;
+  font-size: 1em;
+  color: #162938;
+  font-weight: 600;
+  padding:0 35px 0 5px;
+}
+
+.login{
+  width: 225px;
+}
+
+.btn{
+  width:95%;
+  height: 45px;
+  background: #162938;
+  border:none;
+  outline:none;
+  border-radius: 6px;
+  cursor:pointer;
+  font-size:1em;
+  color:#fff;
+  font-weight: 500;
+}
+.login-register
+{
+  font-size:.9em;
+  color:#162938;
+  text-align: center;
+  font-weight: 500;
+  margin: 25px 0 10px;
+}
+.login-register p a{
+  color:#162938;
+  text-decoration: none;
+  font-weight: 600;
+}
+.login-register p a:hover{
+  text-decoration: underline;
+}
+</style>
+
+{% endblock content %}
