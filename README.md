@@ -40,7 +40,7 @@ To run the Harry Potter Store locally, follow the steps mentioned below:
 4. Now you have to install the virtual environment module by using "pip install virtualenv" VSCode (CMD)terminal.
 5. If you face "No module named pip" error, first install pip using "python -m ensurepip --default-pip" command, and then try to install virtualenv.
 6. After the installation, create a virtual environment by using "virtual env" command.
-7. Now run the virtual environment by entering "env\scripts\activate".
+7. Now run the virtual environment by entering "env\bin\activate".
 8. Now for final installation, we have to install the django by entering "python -m pip install django" command.
 9. Now you are set to run the Harry Potter Store on your local server. To start the server, enter "python manage.py runserver.
 10. The server should start running on your system. Head to "http://127.0.0.1:8000/" in your browser and I Solemnly Swear That I Am Up to No Good.
@@ -50,3 +50,6 @@ Our idea can be used to cater all the Haryy Potter fans, and different local bra
 
 ## Further Improvement
 The addition of responsiveness can help us cater the mobile/tablet users. Apart from that, addition of trivia games, integration of Stripe or Razorpay gateway could improve buyer's payment experience.
+
+## Project Demo
+Here is the link to the demo of our Harry Potter Store: [Demo](https://www.youtube.com/watch?v=ogBEOF4Il7I)
