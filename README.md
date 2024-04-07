@@ -35,7 +35,7 @@ The tech stack used to build the Harry Potter Store are:
 To run the Harry Potter Store locally, follow the steps mentioned below:
 
 1. Open the GitBash terminal and change the directory to your desired location.
-2. Now copy the command "git clone https://github.com/d3monviking/potter-store.git" in GitBash(without double-quotation).
+2. Now copy the command "git clone https://github.com/d3monviking/potter-store" in GitBash(without double-quotation).
 3. A "potter-store" folder must be created to that location. Open the "potter-head" folder in VSCode.
 4. Now you have to install the virtual environment module by using "pip install virtualenv" VSCode (CMD)terminal.
 5. After the installation, create a virtual environment by using "virtual env" command.
