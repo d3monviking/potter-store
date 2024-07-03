@@ -1,0 +1,12 @@
+{
+    "builds": [{
+        "src": "potter_store/wsgi.py",
+        "use": "@vercel/python"
+    }],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "potter_store/wsgi.py"
+        }
+    ]
+}
